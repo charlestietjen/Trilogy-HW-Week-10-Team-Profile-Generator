@@ -8,7 +8,7 @@ class ProfileForm {
         this.employees = [];
     }
     managerPrompt() {
-        inquirer
+        return inquirer
         .prompt([{
             type: 'input',
             name: 'name',
@@ -46,7 +46,7 @@ class ProfileForm {
             }
         },
         {
-            type: 'number',
+            type: 'input',
             name: 'office',
             message: "Enter manager's office number: ",
             validate: officeInput => {
@@ -61,12 +61,12 @@ class ProfileForm {
     .then((a) => {
         let manager = new Manager(a.name, 'Manager', a.id, a.email, a.office);
         this.employees.push(manager);
-        this.engineerPrompt();
+        this.promptHandler('addNew');
     })
     }
 
     engineerPrompt() {
-        inquirer
+        return inquirer
         .prompt([
             {
                 type: 'input',
@@ -113,13 +113,13 @@ class ProfileForm {
         .then((a) => {
             let engineer = new Engineer(a.name, 'Engineer', a.id, a.email, a.github);
             this.employees.push(engineer);
-            this.internPrompt();
+            this.promptHandler('addNew');
             // console.log(this.employees);
         })
     }
 
     internPrompt() {
-        inquirer
+        return inquirer
         .prompt([
             {
                 type: 'input',
@@ -166,13 +166,57 @@ class ProfileForm {
         .then((a) => {
             let intern = new Intern(a.name, 'Intern', a.id, a.email, a.school);
             this.employees.push(intern);
-            console.log(this.employees);
+            this.promptHandler('addNew');
         })
+    }
+
+    addNew() {
+        return inquirer
+        .prompt([
+            {
+                type: 'confirm',
+                name: 'addConf',
+                message: "Would you like to add another team member? ",
+                default: false
+            },
+            {
+                type: 'list',
+                name: 'title',
+                message: "Select the title of the employee you're adding. ",
+                choices: ["Engineer", "Intern"],
+                when: ({ addConf }) => addConf
+            }
+        ])
+        .then((a) => {
+            if (a.addConf){
+                this.promptHandler(a.title.toLowerCase())
+                return;
+            };
+            console.log(this.employees[0].constructor.name);
+        })
+    };
+
+    promptHandler(promptType) {
+        switch(promptType){
+            case 'manager':
+                this.managerPrompt()
+                break;
+            case 'engineer':
+                this.engineerPrompt()
+                break;
+            case 'intern':
+                this.internPrompt()
+                break;
+            case 'addNew':
+                this.addNew()
+                break;
+        }      
     }
 }
 
 const newForm = new ProfileForm;
 
-newForm.managerPrompt()
+newForm.promptHandler('manager');
+// newForm.promptHandler('manager');
 // .then(() => {console.log(newForm.employees)});
 // .then(() => {addHandlerPrompt()});
