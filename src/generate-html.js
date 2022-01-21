@@ -1,3 +1,7 @@
+// const employees = require('./index')
 
+generateHTML = function(employees) {
+    
+};
 
-module.exports = `html goes here`;
+module.exports = generateHTML;

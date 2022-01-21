@@ -1,6 +1,7 @@
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generateHTML = require('./src/generate-html');
 const inquirer = require('inquirer');
 
 class ProfileForm {
@@ -8,7 +9,7 @@ class ProfileForm {
         this.employees = [];
     }
     managerPrompt() {
-        return inquirer
+        inquirer
         .prompt([{
             type: 'input',
             name: 'name',
@@ -66,7 +67,7 @@ class ProfileForm {
     }
 
     engineerPrompt() {
-        return inquirer
+        inquirer
         .prompt([
             {
                 type: 'input',
@@ -119,7 +120,7 @@ class ProfileForm {
     }
 
     internPrompt() {
-        return inquirer
+        inquirer
         .prompt([
             {
                 type: 'input',
@@ -192,7 +193,8 @@ class ProfileForm {
                 this.promptHandler(a.title.toLowerCase())
                 return;
             };
-            console.log(this.employees[0].constructor.name);
+            // console.log(this.employees[0].constructor.name);
+            generateHTML(this.employees)
         })
     };
 
@@ -220,3 +222,5 @@ newForm.promptHandler('manager');
 // newForm.promptHandler('manager');
 // .then(() => {console.log(newForm.employees)});
 // .then(() => {addHandlerPrompt()});
+
+module.exports = newForm.employees;
