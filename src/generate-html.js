@@ -1,8 +1,3 @@
-// const employees = require('./index')
-const manIcon = '<i class="fas fa-user-tie"></i>';
-const engIcon = '<i class="fas fa-user-cog"></i>';
-const intIcon = '<i class="fas fa-user-graduate"></i>';
-
 const renderIcon = title => {
     switch (title) {
         case 'Manager':
