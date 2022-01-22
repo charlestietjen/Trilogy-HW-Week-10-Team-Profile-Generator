@@ -51,15 +51,11 @@ class ProfileForm {
             type: 'input',
             name: 'office',
             message: "Enter manager's office number: ",
-            // filter: specialFilter => {
-            //     specialFilter = `Office #: ${specialFilter}`;
-            // },
-            validate: officeInput => {
-                if (!officeInput) {
-                    console.log("Manager office number is required.");
-                    return false;
+            filter: specialFilter => {
+                if (specialFilter) {
+                    return `Office #: ${specialFilter}`;
                 }
-            return true;
+                return "";
             }
         }
     ])
@@ -114,7 +110,10 @@ class ProfileForm {
                 name: 'github',
                 message: "(optional) Enter engineer's github username: ",
                 filter: specialFilter => {
-                    return specialFilter = `GitHub: <a href="https://www.github.com/${specialFilter}">${specialFilter}</a>`;
+                    if (specialFilter) {
+                        return `GitHub: <a href="https://www.github.com/${specialFilter}">${specialFilter}</a>`;
+                    };
+                    return "";
                 }
             }
         ])
@@ -170,7 +169,10 @@ class ProfileForm {
                 name: 'school',
                 message: "(optional) Enter intern's school: ",
                 filter: specialFilter => {
-                    return specialFilter = `School: ${specialFilter}`;
+                    if (specialFilter) {
+                        return `School: ${specialFilter}`;
+                    };
+                    return "";
                 }
             }
         ])
