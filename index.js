@@ -3,6 +3,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const generateHTML = require('./src/generate-html');
 const inquirer = require('inquirer');
+const fs = require('fs');
 
 class ProfileForm {
     constructor() {
@@ -50,6 +51,9 @@ class ProfileForm {
             type: 'input',
             name: 'office',
             message: "Enter manager's office number: ",
+            // filter: specialFilter => {
+            //     specialFilter = `Office #: ${specialFilter}`;
+            // },
             validate: officeInput => {
                 if (!officeInput) {
                     console.log("Manager office number is required.");
@@ -108,7 +112,10 @@ class ProfileForm {
             {
                 type: 'input',
                 name: 'github',
-                message: "(optional) Enter engineer's github username: "
+                message: "(optional) Enter engineer's github username: ",
+                filter: specialFilter => {
+                    return specialFilter = `GitHub: <a href="https://www.github.com/${specialFilter}">${specialFilter}</a>`;
+                }
             }
         ])
         .then((a) => {
@@ -161,7 +168,10 @@ class ProfileForm {
             {
                 type: 'input',
                 name: 'school',
-                message: "(optional) Enter intern's school: "
+                message: "(optional) Enter intern's school: ",
+                filter: specialFilter => {
+                    return specialFilter = `School: ${specialFilter}`;
+                }
             }
         ])
         .then((a) => {
@@ -194,7 +204,20 @@ class ProfileForm {
                 return;
             };
             // console.log(this.employees[0].constructor.name);
-            generateHTML(this.employees)
+            fs.writeFile('./dist/teamProfile.html', generateHTML(this.employees), err => {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                console.log('./dist/teamProfile.html created.');
+            })
+            fs.copyFile('./src/bulma.min.css', './dist/bulma.min.css', err => {
+                if (err){
+                    console.log(err);
+                    return;
+                }
+                console.log("./dist/bulma.min.css created.");
+            })
         })
     };
 
