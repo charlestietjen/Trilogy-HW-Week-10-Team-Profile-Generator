@@ -42,31 +42,33 @@ const generateCards = employees => {
         .join('')}
 `}
 
-generateHTML = function(employees) {
-    return `<!DOCTYPE html>
-    <html>  <head>
+generateHtml = function(employees, title) {
+    return `
+<!DOCTYPE html>
+<html>  
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Team Profile</title>
+        <title>${title}</title>
         <link rel="stylesheet" href="./bulma.min.css">
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-      </head>
-      <body>
-      <section class="section">
-        <div class="container">
-          <h1 class="title">
-            The Team
-          </h1>
-        </div>
-      </section>
-      <section>
-          <div class="container columns">
-            ${generateCards(employees)}              
-          </div>
-      </section>
-      </body>
-    </html>
+    </head>
+    <body>
+        <section class="hero is-small is-info mb-6">
+            <div class="hero-body">
+                <p class="title has-text-centered">
+                    ${title}
+                </p>
+            </div>
+        </section>
+        <section class="container">
+            <div class="columns is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-evenly">
+                ${generateCards(employees)}              
+            </div>
+        </section>
+    </body>
+</html>
     `
 };
 
-module.exports = generateHTML;
+module.exports = generateHtml;
