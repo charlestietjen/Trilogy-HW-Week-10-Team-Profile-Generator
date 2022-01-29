@@ -33,6 +33,8 @@ Available for use under. [![License](https://img.shields.io/badge/License-CC_BY_
 ## Video
 ![Youtube Link](https://youtu.be/mtijEwVh8tA)
 
+[![Watch the video](https://img.youtube.com/vi/nTQUwghvy5Q/default.jpg)](https://youtu.be/nTQUwghvy5Q)
+
  
 ## Installation
 The application requires inquirer, from the root of the application type "npm install" to install inquirer and it's dependencies.
