@@ -31,9 +31,7 @@ Available for use under. [![License](https://img.shields.io/badge/License-CC_BY_
 ![Project Screenshot](./img/project-ss.png?raw=true)
 
 ## Video
-![Youtube Link](https://youtu.be/mtijEwVh8tA)
-
-[![Watch the video](https://img.youtube.com/vi/nTQUwghvy5Q/default.jpg)](https://youtu.be/nTQUwghvy5Q)
+[Youtube Link](https://youtu.be/mtijEwVh8tA)
 
  
 ## Installation
