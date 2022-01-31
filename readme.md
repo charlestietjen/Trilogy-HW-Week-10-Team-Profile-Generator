@@ -17,7 +17,7 @@
 
 -[Testing Included](#Testing-Included)
 
--[Contact](#Contact)
+-[Contact](#Contact-Me)
 
 
 ## Description
@@ -46,7 +46,7 @@ Type "node index" from the root of the application directory and follow the prom
 Tests included: Employee.test, Engineer.test, Intern.test, Manager.test.
 
  
-## Contact
+## Contact Me
 Find me at [GitHub](https://github.com/charlestietjen)
 
 Reach me by email at charles@lowlevelgoblin.com
