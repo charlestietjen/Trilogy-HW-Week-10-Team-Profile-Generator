@@ -11,11 +11,11 @@
 
 -[Video Demonstration](#Video-Demonstration)
 
--[Installation](#Installation)
+-[Installation Instructions](#Installation-Instructions)
 
--[Usage](#Usage)
+-[Usage Instructions](#Usage-Instructions)
 
--[Testing](#Testing)
+-[Testing Included](#Testing-Included)
 
 -[Contact](#Contact)
 
@@ -34,15 +34,15 @@ Available for use under. [![License](https://img.shields.io/badge/License-CC_BY_
 [![Youtube Link](https://img.youtube.com/vi/mtijEwVh8tA/default.jpg)](https://youtu.be/mtijEwVh8tA)
 
  
-## Installation
+## Installation Instructions
 The application requires inquirer, from the root of the application type "npm install" to install inquirer and it's dependencies.
 
  
-## Usage
+## Usage Instructions
 Type "node index" from the root of the application directory and follow the prompts. You can find your team profile page and stylesheet it uses in the dist directory when complete.
 
  
-## Testing
+## Testing Included
 Tests included: Employee.test, Engineer.test, Intern.test, Manager.test.
 
  
