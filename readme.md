@@ -9,7 +9,7 @@
 
 -[Screenshot](#Screenshot)
 
--[Video Demonstration](<#Video Demonstration>)
+-[Video Demonstration](#Video-Demonstration)
 
 -[Installation](#Installation)
 
