@@ -17,7 +17,7 @@
 
 -[Testing Included](#Testing-Included)
 
--[Contact](#Contact-Me)
+-[Contact Me](#Contact-Me)
 
 
 ## Description
