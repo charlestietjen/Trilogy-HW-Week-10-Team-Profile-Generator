@@ -9,7 +9,7 @@
 
 -[Screenshot](#Screenshot)
 
--[Video Demonstration](#Video)
+-[Video Demonstration](#Video%20Demonstration)
 
 -[Installation](#Installation)
 
@@ -30,7 +30,7 @@ Available for use under. [![License](https://img.shields.io/badge/License-CC_BY_
 ## Screenshot
 ![Project Screenshot](./img/project-ss.png?raw=true)
 
-## Video
+## Video Demonstration
 [![Youtube Link](https://img.youtube.com/vi/mtijEwVh8tA/default.jpg)](https://youtu.be/mtijEwVh8tA)
 
  
